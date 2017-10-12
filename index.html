@@ -1,44 +1,256 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Template</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-	<div class="container-fluid">
-		<div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-	</div>
-	<script src="js/bootstrap.min.js"></script>
-  </body>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>HTML training</title>
+	</head>
+	<body>
+		<header> 
+			<img id="logo" src="images/my_superman_logo_by_the_penciler-d75dlil.png" width="120" height="90">
+			<h1>First HTML page </h1>
+		</header>
+		<nav>
+			<a href="/html/">HTML</a> |
+			 <a href="/css/">CSS</a> |
+			 <a href="/js/">JavaScript</a> |
+			 <a href="/jquery/">jQuery</a>
+		</nav>
+		<p>Paragraph 1</p>
+		<p>Paragraph 2</p>
+		<p>Paragraph 3</p>
+		<p>Paragraph 4</p>
+		<section id="listSection">
+		<h3>I. Lists<h3>
+			<div class="pink-paragraph">
+				<article>
+					<section id="unorderedList">
+						<p>[Unordered list]</p>
+						<ul>
+							<li>element 1</li>
+							<li>element 3</li>
+							<li>element 3</li>
+						</ul>
+					</section>
+				</article>
+			</div>
+			<div name="divName">
+				<article>
+					<section id="orderedList">
+						<p>[Ordered list]</p>
+						<ol>
+						   <li>Cook</li>
+						   <li>Wash the dishes</li>
+						   <li>Feed the cat</li>
+					   </ol>
+					</section>
+				</article>
+			</div>
+			<div>	
+				<article>
+					<section id="descriptionList">
+						<p>[Description list]</p>
+						<dl>
+							<dt><strong>HTML</strong></dt>
+								<dd>Abbreviation for HyperText Markup Language - a language used to make web pages.</dd>
+
+							<dt><strong>CSS</strong></dt>
+								<dd>CSS is used to style your page</dd>
+						</dl>
+					</section>
+				</article>
+			</div>	
+		</section>
+		<section id="tableSection">
+		<h3>II. Tables<h3>
+			<article class = "navy">
+				<section id="firstTable">
+					<p>[Simple table]</p>
+					<table border ="1">
+						<tr>
+							<td>row 1, cell 1</td>
+							<td>row 1, cell 2</td>
+							<td>row 1, cell 3</td>
+						</tr>
+						<tr>
+							<td>row 2, cell 1</td>
+							<td>row 2, cell 2</td> 
+							<td>row 2, cell 3</td>       
+						</tr>
+						<tr>
+							<td>row 3, cell 1</td>
+							<td>row 3, cell 2</td>  
+							<td>row 3, cell 3</td>      
+						</tr>
+					</table>
+
+				</section>
+			</article>
+			<article>
+				<section id="secondTable">
+					<p>[Table with thead, tfoot and tbody, also showing how <mark>rowspan</mark> and <mark>colspan</mark> are used]</p>
+					<table border="1">
+						<thead>
+							<td>Header 1</td>
+							<td>Header 2</td>
+							<td>Header 3</td>
+						</thead>
+						<tfoot>
+						<tr>
+							<td>foot1</td>
+							<td>foot3</td>
+							<td>foot3</td>
+							</tr>
+						</tfoot>
+						<tbody>
+							<tr>
+								<td> row 1, cell 1</td>
+								<td> row 1, cell 2</td>
+								<td rowspan="2"> row 1, cell 3</td>
+							</tr>
+							<tr>
+								<td> row 2, cell 1</td>
+								<td> row 2, cell 2</td>	
+							</tr>
+							<tr>
+								<td> row 3, cell 1</td>
+								<td colspan="2"> row 3, cell 2</td>	
+							</tr>
+						<tbody>	
+					</table>
+				</section>
+			</article>
+		</section>
+		<section id="inputsSection">
+		<h3>III. Inputs<h3>
+			<article>
+				<section id="textInput">
+					<p>[Text input]</p>
+					<p>Username:</p><input type="text">
+				</section>
+				<section id="passwordInput">
+					<p>[Password input]</p>
+					<p>Password:</p><input type="password">
+				</section>
+				<section id="submitInput">
+					<p>[Submit input]</p>
+					<p>Submit:</p><input type="submit" value="Login">
+				</section>
+				<section id="checkboxInput">
+					<p>[Checkbox input]</p>
+					<input type="checkbox" checked value="Yes"> Yes</input>
+					<input type="checkbox" value="No"> No </input><br>
+				</section>
+				<section id="radioInput">
+					<p>[Radio input]</p>
+					<input type="radio" value="radio button">
+				</section>
+				<section id="textarea ">
+					<p>[Textarea]</p>
+					<p>Enter some comment:</p>
+					<textarea rows="5" cols="20">A big load of text</textarea>
+				</section>
+				<section id="select">
+					<p>[Select]</p>
+					<p>Choose country</p>
+					<select>
+						<option>Bulgaria</option>
+						<option>Serbia</option>
+						<option value="third option">Greece</option> 
+					</select>
+				</section>
+			</article>
+		</section>
+		<section id="inputsSection">
+		<h3>IV. Displaying text<h3>
+			<article>
+				<section id="abbreviation">
+					<p>[Abreviation  ]</p>
+					<p>This web site is about <abbr title="HyperText Markup Language">HTML</abbr> and <abbr title="Cascading Style Sheets">CSS</abbr>.</p>
+				</section>
+				<section id="quotation">
+					<p>[Quotation]</p>
+					<p>So I asked Bob about quotations on the Web and he said <q>I know as much about quotations as I do about pigeon fancying</q>. Luckily, I found HTML Dog and it said:</p>
+				</section>
+				<section id="citation">
+					<p>[Citation]</p>
+					<p>According to <cite>the Bible</cite>, after six days God said <q>screw this for a lark, I'm having a nap</q>.</p>
+				</section>
+				<section id="code">
+					<p>[Code]</p>
+					<code>&lt;some computer code&gt;</code>
+				</section>
+				<section id="time">
+					<p>[Time]</p>
+					<p>Written by Doctor Who on <time datetime="2052-11-21">Thursday 21st November 2052</time>.</p>
+				</section>
+				<section id="mark ">
+					<p>[Mark]</p>
+					<p>He wants to play with his <mark>Legos</mark></p>
+				</section>
+			</article>
+		</section>
+		<section id="conditionalComments">
+		<h3>V. Conditional comments<h3>
+			<article>
+				<section id="condditionalComments">
+					<p>[Conditional comments defines some HTML tags to be executed by Internet Explorer only.]</p>
+					<!--[if IE 9]>
+						.... some HTML here ....
+					<![endif]-->
+				</section>
+			</article>	
+		</section>
+		<section id="html5forms">
+		<h3>VI. HTML 5 forms<h3>
+			<article>
+				<section id="placeholder">
+					<p>[Placeholder]</p>
+					<input type="email"placeholder="you@somewhere.com" name="email_address" id="email_address">
+				</section>
+				<section id="autofocus">
+					<p>[Autofocus]</p>
+					<input name="query" autofocus>
+				</section>
+				<section id="datalist">
+					<p>[Datalist]</p>
+					<input name="country" list="country_name">
+					<datalist id="country_name">
+						<option value="Afghanistan">
+						<option value="Albania">
+						<option value="Algeria">
+						<option value="Andorra">
+						<option value="Armenia">
+						<option value="Australia">
+						<option value="Austria">
+						<option value="Azerbaijan">
+						<!-- etc. -->
+					</datalist>
+				</section>
+			</article>
+		</section>
+		<section id="embeded">
+		<h3>VII. Embeded elements<h3>
+			<article>
+				<section id="iframe">
+					<p>[IFrame]</p>
+					<iframe width="200" height="200" src="https://www.youtube.com/embed/OCZjiCqEaog" frameborder="0" allowfullscreen></iframe>
+				</section>
+				<section id="video">
+					<p>[Video]</p>
+					<video src="kitties.mp4" autoplay></video>
+				</section>
+				<section id="audio">
+					<p>[Audio]</p>
+					<audio src="meow_mix.mp3" controls></audio>
+				</section>
+			</article>
+		</section>		
+		<footer>
+			<p>[Copyright 2017]</p>
+		</footer>
+
+	</body>
 </html>

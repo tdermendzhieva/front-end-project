@@ -1,0 +1,20 @@
+=======Exercises=======
+1. Check if jquery is loaded
+2.Change the color of the first paragraph to yellow 
+3.Find all div elements and change the background color	to orange
+4.Find the second paragraph element containig name attribute and change its background	
+5.Find the third paragraph and the table and change the background of bith elements to pink
+6.Find all even elements in the table and change their color	
+7.Find the first list item of the ordered list element and change its color
+8.Do the same with the last one
+9.Find the input element of type text in the form and add your name as a value
+10. Change the color of the submit button.
+11. Print the values in the text list elements (use console.log("The text you want to print")));
+
+===sample functions=====
+css("color", "yellow");
+css("background-color", "purple");
+css({"background-color" : "red", "color" : "white"});
+val("Tushka");
+
+	
