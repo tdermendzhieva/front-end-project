@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of jQuery Animation Effects</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style type="text/css">
+    img{
+        position: relative; /* Required to move element */
+    }
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#btn1").on("click",function(){
+		$("#imgM").animate({
+			left: 300
+		});
+	});
+	
+	$("#btn2").click(function(){
+		$(".box").animate({
+			width: "300px",
+			height: "300px",
+			marginLeft: "150px",
+			borderWidth: "10px",
+			opacity: 0.5
+		});
+	});
+	
+	$("#btn3").click(function(){
+		$(".box")
+			.animate({width: "300px"})
+			.animate({height: "300px"})
+			.animate({marginLeft: "150px"})
+			.animate({borderWidth: "10px"})
+			.animate({opacity: 0.5});
+	});
+	// Start animation
+	$(".start-btn").click(function(){
+		$("#imgP").animate({left: "+=150px"}, 2000);
+    });
+
+	// Stop running animation
+	$(".stop-btn").click(function(){
+		$("#imgP").stop();
+	});
+		
+	// Start animation in the opposite direction
+		$(".back-btn").click(function(){
+		$("#imgP").animate({left: "-=150px"}, 2000);
+	});
+
+	// Reset to default
+	$(".reset-btn").click(function(){
+		$("#imgP").animate({left: "0"}, "fast");
+	});
+});
+</script>
+</head>			
+<body>
+    <button id="btn1" type="button">Animate Img</button>
+    <p>
+    	<img id="imgM" src="../images/mushroom.jpg" alt="Mushroom">
+    </p>
+	<button id="btn2" type="button">Animate Box 1</button>
+	<button id="btn3" type="button">Animate Box 2</button>
+	<div class="box"></div>
+	<button type="button" class="start-btn">Start</button>
+	<button type="button" class="stop-btn">Stop</button>
+	<button type="button" class="back-btn">Back</button>
+	<button type="button" class="reset-btn">Reset</button>
+	<p>
+		<img id="imgP" src="../images/pacman-icon.png" alt="Pacman">
+	</p>
+</body>
+<style type="text/css">
+				.box{
+					width: 80%;
+					height: 200px;
+					background: #9d7ede;
+					margin-top: 30px;
+				}
+				
+</style>
+</html>                                		

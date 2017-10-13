@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Inserting HTML Contents At the End of the Elements in jQuery</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    // Append all paragraphs on document ready
+    $("p").append(' <a href="#">read more...</a>');
+    
+    // Append a div paragraph-container on button click
+    $("#appendBtn").click(function(){
+       $("#paragraph-container").append("This is demo text.");
+    });
+	
+	// Prepend all paragraphs on document ready
+    $("p").prepend("<strong>Note:</strong> ");
+    
+	
+	 $("#appendMultiple").click(function(){
+        var newHeading = "<h1>Important Note:</h1>";
+        var newParagraph = document.createElement("p");
+		newParagraph.innerHTML = "<em>Lorem Ipsum is dummy text...</em>";
+        var newImage = $('<img src="smiley.png" alt="Symbol">');
+        $("body").append(newHeading, newParagraph, newImage);
+    });
+	
+	////////////////////////////////before() and after()
+	// Add content after heading on button click
+    $("button.insert-after").click(function(){
+        $("h1").after('<img src="marker-right.gif" alt="Symbol">');
+    });
+
+    
+    // Add content before heading on button click
+    $("button.insert-before").click(function(){
+        $("h1").before('<img src="marker-left.gif" alt="Symbol">');
+    });
+	
+	////////////////////////////////insertBefore() and insertAfter()
+	$("button.insert-before-elem").click(function(){
+        $("#logo").insertBefore('#paragraph-container');
+    });
+	
+	// Prepend a div paragraph-container on button click
+    $("#prependBtn").click(function(){
+       $("#paragraph-container").prepend("This is demo text.");
+    });
+	
+	////////////////////////////wrap()
+	$("hr").wrap('<div id="btn-container" style="border: 1px solid black;"></div>');
+});
+</script>
+<style type="text/css">
+    h1{
+        display: inline-block; /* To place marker image and heading in one line */
+    }
+    body{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+	<h1>Hello World</h1><br>
+    <button id="appendBtn" type="button">Appnd Text</button>
+	<button id="prependBtn" type="button">Prepend Text</button>
+	<button id="appendMultiple" type="button">Append multiple elements</button>
+    <div id="paragraph-container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.</p>
+        <p>Quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Ut tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti.</p>
+    </div>
+	<img id="logo" src="butterfly.jpg" width="50"  height="50">
+	<hr>
+		<button type="button" class="insert-before">Insert Before</button>
+		<button type="button" class="insert-after">Insert After</button>
+		<button type="button" class="insert-before-elem">Insert Before Element</button>
+    <hr>
+</body>
+</html>                                		

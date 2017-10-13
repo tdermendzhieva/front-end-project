@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Replacing elements from the DOM</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    
+    // empty container
+    $(".replace").click(function(){
+       $("#firtsP").replaceWith('<div style="border: 1px solid black;"></div>');
+    });
+	
+	$(".replaceAll").click(function(){
+		$('<div style="border: 1px solid black;"></div>')
+			.replaceAll('p');
+	});		
+	
+	//////////clone
+	$(".clone").click(function(){
+		var clone = $('#logo').clone();
+
+		clone.insertAfter('h1');
+	});		
+});
+</script>
+<style type="text/css">
+    h1{
+        display: inline-block; /* To place marker image and heading in one line */
+    }
+    body{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+	<h1>Hello World</h1><br>
+    <div id="paragraph-container">
+        <p id="firtsP">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.</p>
+        <p>Quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Ut tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti.</p>
+    </div>
+	<img id="logo" src="butterfly.jpg" width="50"  height="50">
+	<div id="btn-container" style="border: 1px solid black;">
+		<hr>
+			<button type="button" class="replace">Replace with</button>
+			<button type="button" class="replaceAll">Replace all</button>
+			<button type="button" class="clone">Clone</button>
+		<hr>
+	</div>
+</body>
+</html>                                		

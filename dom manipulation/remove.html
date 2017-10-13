@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Removing elements from the DOM</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    
+    // empty container
+    $(".empty").click(function(){
+       $("#paragraph-container").empty();
+    });
+	
+	$(".remove").click(function(){
+       $("#paragraph-container").remove();
+    });
+		
+	
+	$(".unwrap").click(function(){
+		$(".empty").unwrap();
+	});	
+	
+	$("#changeCSS").click(function(){
+		$("p").addClass("blue");
+	});
+});
+</script>
+<style type="text/css">
+    h1{
+        display: inline-block; /* To place marker image and heading in one line */
+    }
+    body{
+        text-align: center;
+    }
+	.pink{
+		background: pink;
+	}
+</style>
+</head>
+<body>
+	<h1>Hello World</h1><br>
+    <div id="paragraph-container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.</p>
+        <p>Quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Ut tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti.</p>
+    </div>
+	<img id="logo" src="butterfly.jpg" width="50"  height="50">
+	<div id="btn-container" style="border: 1px solid black;">
+		<hr>
+			<button type="button" class="empty">Empty</button>
+			<button type="button" class="remove">Remove</button>
+			<button type="button" class="unwrap">Unwrap</button>
+			<button type="button" id="changeCSS">Add CSS class</button>
+		<hr>
+	</div>
+</body>
+</html>                                		

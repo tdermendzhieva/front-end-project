@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Executing a Function on Click Event in jQuery</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><style type="text/css">
+    p{
+        padding: 20px;
+        font: 20px sans-serif;
+        background: #f2f2f2;
+    }
+    p.highlight{
+        background: yellow;
+    }
+	p.green-light{
+        background: green;
+    }
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+   //click
+    $("#pOne").click(function(){
+        $(this).slideUp();
+    });
+	//double click
+	 $("#pTwo").dblclick(function(){
+        $(this).slideUp();
+    });
+	
+	//hover
+	$("#pThree").hover(function(){
+        $(this).addClass("highlight");
+    }, function(){
+        $(this).removeClass("highlight");
+    });
+	
+	//mouseover and mouseleave
+	$("#pFour").mouseenter(function(){
+		$(this).removeClass("green-light");
+        $(this).addClass("highlight");
+    });
+    $("#pFour").mouseleave(function(){
+        $(this).addClass("green-light");
+    });
+});
+</script>
+</head>
+<body>
+    <p id="pOne">Click on me and I'll disappear.</p>
+    <p id="pTwo">Double Click on me and I'll disappear.</p>
+    <p id="pThree">Place mouse pointer on me.</p>
+	<p id="pFour">Place mouse pointer on me.</p>
+</body>
+</html>                                		

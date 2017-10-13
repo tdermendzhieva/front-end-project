@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Executing a Function on Change Event in jQuery</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    // change
+    $("select").change(function(){
+        var selectedOption = $(this).find(":selected").val();
+        alert("You have selected - " + selectedOption);
+    });
+	
+	///focus
+	$("input").focus(function(){
+        $(this).next("span").css("color", "red");
+    });
+	
+	//blur
+	$("input").blur(function(){
+        $(this).next("span").show().fadeOut("slow");
+   });
+	
+	//submit
+	$("form").submit(function(event){
+		if($("input[type=text]").val() == "") {
+			alert("ERROR, email fiels is empty!!!");
+		}
+	});
+});
+</script>
+</head>
+<body>
+    <form>
+        <label>City:</label>
+        <select>
+            <option>London</option>
+            <option>Paris</option>
+            <option>New York</option>
+        </select>
+		<br>
+        <label>Email: <input type="text"> <span>focus fire</span></label><br>
+        <label>Password: <input type="password"> <span>focus fire</span></label><br>
+        <label><input type="submit" value="Sign In"> <span>focus fire</span></label>
+    
+    </form>
+</body>
+</html>                                		

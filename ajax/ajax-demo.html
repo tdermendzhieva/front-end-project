@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JQuery Tutorial</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+<form id="theForm">
+  
+  <button type="button" id="loadFile">Load data from html page</button><br />
+  <div id="theDiv"></div>
+  <button type="button" id="postReq">Create post</button>
+  <div id="postResult"></div>
+  
+  <button type="button" id="getReq">GET post</button><br />
+  <p id="getResult"></p>
+
+</form>
+ <button type="button" id="fourButton">Test load</button>
+<div id="loadTarget">
+  <h3>Some data in h3 tag</h3>
+</div>
+
+<button type="button" id="fiveButton">Load and execute js file</button>
+
+<div id="customers">Customer Information</div>
+
+<script type="text/javascript">
+////////install WEB server for chrome
+//https://github.com/typicode/jsonplaceholder#how-to
+
+$("document").ready(function() {
+
+$("#loadFile").on("click",function(){
+	$.ajax({
+        url: "htmFile.html",
+    }).done(function(data) { 
+		$("#theDiv").html(data);
+	}).fail(function(){ 
+		alert("Error");
+	});
+  });
+  
+  $("#postReq").on("click", function(){
+	$.ajax({
+        url: "http://127.0.0.1:8080/BookingSystem/booking/create",
+        type : "POST",
+		headers: { 'Access-Control-Allow-Origin':'http://127.0.0.1:8080' },
+		//dataType: 'jsonp',
+		data: JSON.stringify({ roomNumber: "5",
+			clientName: "Petkan" }),
+		contentType: "application/json; charset=utf-8",
+		dataType: "json"
+        
+    })
+    .done (function(data) { 
+		console.log("Successfully created booking!!");
+		console.log(data);
+		$("#postResult").text(data.message);
+	})
+    .fail (function()  { 
+		alert("Error ");
+	});
+  });
+  
+  $("#getReq").on("click",function(){
+		$.ajax({
+		
+        url: "http://127.0.0.1:8080/BookingSystem/booking/15",
+		type: "GET"
+		
+			}).done(function(data) { 
+				console.log(data); 
+				$("#getResult").text("Room:" +data.roomNumber + " for " + data.clientName);
+			}).fail(function(){ 
+				alert("Error");
+		});
+  });
+  
+  
+  
+  /////////////////////////////////////////////
+  
+  
+  var parameters = { p1 : "val1", p2 : "val2"};
+	$.post("data.html", parameters )
+    .done(function(data) {
+        $("#targetElement").html(data);
+    }) ;
+	
+	
+   $("#fourButton").on("click", function(){
+	$("#loadTarget").load("htmFile.html");
+	});
+	
+	$("#fiveButton").on("click", function(){
+		$.getScript("sample-script.js");
+	});
+	
+	
+	/*
+	============used to set params to all ajax calls
+	$.ajaxSetup({
+		type : "POST"
+	});
+	
+	===========used to prefilter all of the ajax calls before the are sent
+	$.ajaxPrefilter(function(options, originalOptions, jqXHR){
+    
+		if(options.url.indexOf("/app") != -1) {
+			options.type = "POST";
+		}
+	});
+	===========handles all ajax errors
+	$(document).ajaxError(function(event, jqxhr, ajaxOptions, errorThrown) {
+        var contentType   = jqxhr.getResponseHeader("Content-Type");
+        var responseBody  = jqxhr.responseText;
+
+        //do something depending on response headers and response body.
+});
+
+
+	
+	*/
+});
+
+
+
+</script>
+</body>
+</html>
